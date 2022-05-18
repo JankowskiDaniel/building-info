@@ -1,17 +1,23 @@
 package pl.put.poznan.building.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.logic.BuildingInfo;
 
 import java.util.Arrays;
 
 
+@SpringBootApplication
 @RestController
-@RequestMapping("/{text}")
 public class BuildingInfoController {
 
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
+
+    @GetMapping("/home")
+    public String sayHello(@RequestParam(value="myName", defaultValue = "TeamDelta")String name){
+        return String.format("Hello %s", name);
+    }
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
     public String get(@PathVariable String text,
