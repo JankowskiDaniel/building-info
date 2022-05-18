@@ -3,8 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
-    
+
+    <version>0.1</version>
+    <name>Building Info</name>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -13,7 +15,6 @@
 
     <groupId>pl.put.poznan</groupId>
     <artifactId>io-project-architecture</artifactId>
-    <version>0.1</version>
 
 	<properties>
         <java.version>11</java.version>
