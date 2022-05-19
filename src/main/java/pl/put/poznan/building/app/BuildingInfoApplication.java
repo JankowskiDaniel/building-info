@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //Ale super komentarz
 //bardzo ważny komentarz
 
-@SpringBootApplication(scanBasePackages = {"pl.put.poznan.transformer.rest"})
+@SpringBootApplication(scanBasePackages = {"pl.put.poznan.building.rest"})
 public class BuildingInfoApplication {
 
     public static void main(String[] args) {

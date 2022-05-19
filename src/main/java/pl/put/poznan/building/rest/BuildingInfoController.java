@@ -9,14 +9,14 @@ import pl.put.poznan.building.logic.BuildingInfo;
 import java.util.Arrays;
 
 
-@SpringBootApplication
 @RestController
+@RequestMapping(name="/test")
 public class BuildingInfoController {
 
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
 
-    @GetMapping("/home")
-    public String sayHello(@RequestParam(value = "myName", defaultValue = "TeamDelta") String name) {
+    @GetMapping("/area")
+    public String sayHello(@RequestParam String name) {
         return String.format("Hello %s", name);
     }
 
