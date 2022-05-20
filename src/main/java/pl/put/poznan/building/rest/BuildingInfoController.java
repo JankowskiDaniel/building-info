@@ -16,39 +16,20 @@ public class BuildingInfoController {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
 
     @PostMapping("/building/area")
-    public double area(@RequestBody Room room) {
-        return room.getArea();
+    public double area(@RequestBody Building building) {
+        return building.calculateArea();
     }
 
-
-    @GetMapping("/building/volume")
-    public String get(@PathVariable String text,
-                      @RequestParam(value = "transforms", defaultValue = "upper,escape") String[] transforms) {
-
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
-
-        // perform the transformation, you should run your logic here, below is just a silly example
-//        BuildingContainer transformer = new BuildingContainer(transforms);
-//        return transformer.transform(text);
-
-        return "Hi"+text;
+    @PostMapping("/building/volume")
+    public double volume(@RequestBody Building building){
+        return building.calculateVolume();
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
-                       @RequestBody String[] transforms) {
-
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
-
-        // perform the transformation, you should run your logic here, below is just a silly example
-//        BuildingContainer transformer = new BuildingContainer(transforms);
-//        return transformer.transform(text);
-        return null;
+    @PostMapping("/building/lightpower")
+    public double power(@RequestBody Building building){
+        return building.calculateLightingpower();
     }
+
 
 
 }
