@@ -1,6 +1,6 @@
 package pl.put.poznan.building.model;
 
-public class Level implements BuildingSpace{
+public class Level extends BuildingComponent{
     private float area;
     private float volume;
     private float lightingpower;

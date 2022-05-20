@@ -1,6 +1,6 @@
 package pl.put.poznan.building.model;
 
-public class Room implements BuildingSpace {
+public class Room extends BuildingComponent {
     private String name;
     private String address; //in building???
 
