@@ -9,21 +9,21 @@ public class Room implements BuildingSpace {
     private float lightingpower;
 
     /**
-     * Calculate area of building
+     * Calculate area of room
      */
     public void calculateArea() {
         this.area = 0.0F;
     }
 
     /**
-     * Calculating volume for building
+     * Calculating volume for room
      */
     public void calculateVolume() {
         this.volume = 0.0F;
     }
 
     /**
-     * Calculating lighting power of building
+     * Calculating lighting power of room
      */
     public void calculateLightingpower() {
         this.lightingpower = 0.0F;

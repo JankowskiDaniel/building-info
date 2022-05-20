@@ -5,21 +5,21 @@ public class Level implements BuildingSpace{
     private float volume;
     private float lightingpower;
     /**
-     * Calculate area of building
+     * Calculate area of level
      */
     public void calculateArea(){
         this.area = 0.0F;
     }
 
     /**
-     * Calculating volume for building
+     * Calculating volume for level
      */
     public void calculateVolume(){
         this.volume = 0.0F;
     }
 
     /**
-     * Calculating lighting power of building
+     * Calculating lighting power of level
      */
     public void calculateLightingpower(){
         this.lightingpower = 0.0F;
