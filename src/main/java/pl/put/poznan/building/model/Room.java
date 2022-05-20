@@ -1,43 +1,60 @@
 package pl.put.poznan.building.model;
 
-public class Room implements BuildingSpace {
-    private String name;
-    private String address; //in building???
+import java.util.ArrayList;
+
+public class Room extends BuildingComponent {
 
     private float area;
     private float volume;
     private float lightingpower;
 
+    public Room( String id){
+        super(id);
+    }
+
+
     /**
-     * Calculate area of building
+     * Calculate area of room
      */
     public void calculateArea() {
         this.area = 0.0F;
     }
 
     /**
-     * Calculating volume for building
+     * Calculating volume for room
      */
     public void calculateVolume() {
         this.volume = 0.0F;
     }
 
     /**
-     * Calculating lighting power of building
+     * Calculating lighting power of room
      */
     public void calculateLightingpower() {
         this.lightingpower = 0.0F;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public float getArea() {
+        return area;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setArea(float area) {
+        this.area = area;
     }
-    public String getName(){return this.name;}
 
-    public String getAddress(){return this.address;}
+    public float getVolume() {
+        return volume;
+    }
 
+    public void setVolume(float volume) {
+        this.volume = volume;
+    }
+
+    public float getLightingpower() {
+        return lightingpower;
+    }
+
+    public void setLightingpower(float lightingpower) {
+        this.lightingpower = lightingpower;
+    }
 }
