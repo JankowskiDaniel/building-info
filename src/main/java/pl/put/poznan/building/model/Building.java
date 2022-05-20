@@ -32,7 +32,7 @@ public class Building extends BuildingComponent{
      * Calculating lighting power of building
      * @return
      */
-    public double calculateLightingpower(){
+    public double calculateLightPower(){
         return 0.0;
     }
 

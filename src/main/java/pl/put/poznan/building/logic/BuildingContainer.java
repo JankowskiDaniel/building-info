@@ -52,7 +52,7 @@ public class BuildingContainer extends BuildingComponent {
     }
 
     @Override
-    public double calculateLightingpower(){
+    public double calculateLightPower(){
 
         return 0.0;
     }

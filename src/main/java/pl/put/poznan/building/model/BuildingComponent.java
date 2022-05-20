@@ -16,7 +16,7 @@ public abstract class BuildingComponent implements BuildingSpace{
         return 0.0;};
     public double calculateVolume(){
         return 0.0;};
-    public double calculateLightingpower(){
+    public double calculateLightPower(){
         return 0.0;};
 
     public Integer getId() {

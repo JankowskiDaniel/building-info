@@ -28,7 +28,7 @@ public class Level extends BuildingComponent{
      * Calculating lighting power of level
      * @return
      */
-    public double calculateLightingpower(){
+    public double calculateLightPower(){
 
         return 0.0;
     }
