@@ -3,7 +3,7 @@ package pl.put.poznan.building.model;
 
 import java.util.ArrayList;
 
-public class Building {
+public class Building implements BuildingSpace{
 
     private String name;
     private String address;
