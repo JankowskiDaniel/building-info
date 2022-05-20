@@ -2,9 +2,8 @@ package pl.put.poznan.building.rest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
-import pl.put.poznan.building.logic.BuildingInfo;
+import pl.put.poznan.building.logic.BuildingContainer;
 
 import java.util.Arrays;
 
@@ -29,8 +28,9 @@ public class BuildingInfoController {
         logger.debug(Arrays.toString(transforms));
 
         // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo transformer = new BuildingInfo(transforms);
-        return transformer.transform(text);
+//        BuildingContainer transformer = new BuildingContainer(transforms);
+//        return transformer.transform(text);
+        return null;
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")
@@ -42,8 +42,9 @@ public class BuildingInfoController {
         logger.debug(Arrays.toString(transforms));
 
         // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo transformer = new BuildingInfo(transforms);
-        return transformer.transform(text);
+//        BuildingContainer transformer = new BuildingContainer(transforms);
+//        return transformer.transform(text);
+        return null;
     }
 
 
