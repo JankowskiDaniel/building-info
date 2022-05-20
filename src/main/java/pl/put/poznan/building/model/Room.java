@@ -1,12 +1,17 @@
 package pl.put.poznan.building.model;
 
+import java.util.ArrayList;
+
 public class Room extends BuildingComponent {
-    private String name;
-    private String address; //in building???
 
     private float area;
     private float volume;
     private float lightingpower;
+
+    public Room( String id){
+        super(id);
+    }
+
 
     /**
      * Calculate area of room
@@ -29,15 +34,27 @@ public class Room extends BuildingComponent {
         this.lightingpower = 0.0F;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public float getArea() {
+        return area;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setArea(float area) {
+        this.area = area;
     }
-    public String getName(){return this.name;}
 
-    public String getAddress(){return this.address;}
+    public float getVolume() {
+        return volume;
+    }
 
+    public void setVolume(float volume) {
+        this.volume = volume;
+    }
+
+    public float getLightingpower() {
+        return lightingpower;
+    }
+
+    public void setLightingpower(float lightingpower) {
+        this.lightingpower = lightingpower;
+    }
 }

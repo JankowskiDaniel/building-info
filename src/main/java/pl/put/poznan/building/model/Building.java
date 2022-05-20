@@ -15,7 +15,8 @@ public class Building extends BuildingComponent{
     //list with levels in building
     private ArrayList<Level> levels;
 
-    Building(String name, String address){
+    public Building(String id,String name, String address){
+        super(id);
         this.name = name;
         this.address = address;
         this.levels = new ArrayList<>();
