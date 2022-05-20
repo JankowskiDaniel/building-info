@@ -15,7 +15,7 @@ public class BuildingContainer extends BuildingComponent {
     protected List<BuildingSpace> children = new ArrayList<>();
 
     public BuildingContainer(BuildingSpace... components){
-        super(null);
+//        super(null);
         add(components);
     }
 
@@ -40,17 +40,20 @@ public class BuildingContainer extends BuildingComponent {
     }
 
     @Override
-    public void calculateArea(){
+    public double calculateArea(){
 
+        return 0.0;
     }
 
     @Override
-    public void calculateVolume(){
+    public double calculateVolume(){
 
+        return 0.0;
     }
 
     @Override
-    public void calculateLightingpower(){
+    public double calculateLightingpower(){
 
+        return 0.0;
     }
 }

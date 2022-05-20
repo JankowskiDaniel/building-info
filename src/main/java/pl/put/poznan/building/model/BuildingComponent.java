@@ -1,20 +1,30 @@
 package pl.put.poznan.building.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public abstract class BuildingComponent implements BuildingSpace{
 
-    private String id;
-    public BuildingComponent(String id){
-        this.id=id;
-    }
-    public void calculateArea(){};
-    public void calculateVolume(){};
-    public void calculateLightingpower(){};
+    @JsonProperty("id")
+    private Integer id;
 
-    public String getId() {
+    @JsonProperty("name")
+    private String name;
+
+
+
+    public double calculateArea(){
+        return 0.0;};
+    public double calculateVolume(){
+        return 0.0;};
+    public double calculateLightingpower(){
+        return 0.0;};
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getName() {
+        return name;
     }
+
 }

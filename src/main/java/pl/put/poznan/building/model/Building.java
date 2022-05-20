@@ -1,62 +1,40 @@
 package pl.put.poznan.building.model;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 
 public class Building extends BuildingComponent{
 
-    private String name;
-    private String address;
-
-    private float area;
-    private float volume;
-    private float lightingpower;
-
     //list with levels in building
+    @JsonProperty("levels")
     private ArrayList<Level> levels;
 
-    public Building(String id,String name, String address){
-        super(id);
-        this.name = name;
-        this.address = address;
-        this.levels = new ArrayList<>();
-    }
 
     //wszystkie trzy ponizsze funkcje beda zadeklarowane w interfejsie i są one wspólne dla pozostałych modeli
 
     /**
      * Calculate area of building
      */
-    public void calculateArea(){
-        this.area = 0.0F;
+    public double calculateArea(){
+        return 0.0;
     }
 
     /**
      * Calculating volume for building
      */
-    public void calculateVolume(){
-        this.volume = 0.0F;
+    public double calculateVolume(){
+        return 0.0;
     }
 
     /**
      * Calculating lighting power of building
+     * @return
      */
-    public void calculateLightingpower(){
-        this.lightingpower = 0.0F;
+    public double calculateLightingpower(){
+        return 0.0;
     }
 
-    public void addLevel(Level level){this.levels.add(level);}
-    public void removeLevel(Level level){this.levels.remove(level);}
-
-    public void setName(String name){this.name = name;}
-    public void setAddress(String address){this.address = address;}
-
-    public float getArea(){return this.area;}
-    public float getVolume(){return this.volume;}
-    public float getLightingpower(){return this.lightingpower;}
-
-    public ArrayList getLevels(){return this.levels;}
-    public String getName(){return this.name;}
-    public String getAddress(){return this.address;}
 
 }

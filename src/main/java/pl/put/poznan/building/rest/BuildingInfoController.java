@@ -4,22 +4,24 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.logic.BuildingContainer;
+import pl.put.poznan.building.model.Building;
+import pl.put.poznan.building.model.Room;
 
 import java.util.Arrays;
 
 
 @RestController
-@RequestMapping(name="/test")
 public class BuildingInfoController {
 
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
 
-    @GetMapping("/area")
-    public String sayHello(@RequestParam String name) {
-        return String.format("Hello %s", name);
+    @PostMapping("/building/area")
+    public double area(@RequestBody Room room) {
+        return room.getArea();
     }
 
-    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
+
+    @GetMapping("/building/volume")
     public String get(@PathVariable String text,
                       @RequestParam(value = "transforms", defaultValue = "upper,escape") String[] transforms) {
 
@@ -30,7 +32,8 @@ public class BuildingInfoController {
         // perform the transformation, you should run your logic here, below is just a silly example
 //        BuildingContainer transformer = new BuildingContainer(transforms);
 //        return transformer.transform(text);
-        return null;
+
+        return "Hi"+text;
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")

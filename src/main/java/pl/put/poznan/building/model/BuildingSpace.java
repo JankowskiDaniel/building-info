@@ -1,7 +1,7 @@
 package pl.put.poznan.building.model;
 
 public interface BuildingSpace {
-    public void calculateArea();
-    public void calculateVolume();
-    public void calculateLightingpower();
+    public double calculateArea();
+    public double calculateVolume();
+    public double calculateLightingpower();
 }
