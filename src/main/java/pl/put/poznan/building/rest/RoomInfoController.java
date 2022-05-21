@@ -6,31 +6,31 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
-import pl.put.poznan.building.model.Level;
+import pl.put.poznan.building.model.Room;
 
 @RestController
-public class LevelInfoController {
+public class RoomInfoController {
     private static final Logger logger = LoggerFactory.getLogger(LevelInfoController.class);
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    @PostMapping("/level/area")
-    public String area(@RequestBody Level level) throws JsonProcessingException {
+    @PostMapping("/room/area")
+    public String area(@RequestBody Room room) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
-        node.put("Area", level.calculateArea());
+        node.put("Area", room.calculateArea());
         return mapper.writeValueAsString(node);
     }
 
-    @PostMapping("/level/volume")
-    public String volume(@RequestBody Level level) throws JsonProcessingException {
+    @PostMapping("/room/volume")
+    public String volume(@RequestBody Room room) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
-        node.put("Volume", level.calculateVolume());
+        node.put("Volume", room.calculateVolume());
         return mapper.writeValueAsString(node);
     }
 
-    @PostMapping("/level/lightPower")
-    public String lightPower(@RequestBody Level level) throws JsonProcessingException {
+    @PostMapping("/room/lightPower")
+    public String lightPower(@RequestBody Room room) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
-        node.put("Light power", level.calculateLightPower());
+        node.put("Light power", room.calculateLightPower());
         return mapper.writeValueAsString(node);
     }
 
