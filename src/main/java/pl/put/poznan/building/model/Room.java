@@ -28,6 +28,9 @@ public class Room extends BuildingComponent{
     public double getLightingpower() {
         return lightingpower;
     }
+    public double calculateLightPower(){
+        return lightingpower/area;
+    }
 
 
 }
