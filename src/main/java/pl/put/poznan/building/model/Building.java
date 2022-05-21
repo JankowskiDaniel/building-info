@@ -18,22 +18,37 @@ public class Building extends BuildingComponent{
      * Calculate area of building
      */
     public double calculateArea(){
-        return 0.0;
+        double sum=0;
+        for (int i=0; i<levels.size();i++){
+            sum+=levels.get(i).calculateArea();
+        }
+        return sum;
     }
 
     /**
      * Calculating volume for building
      */
     public double calculateVolume(){
-        return 0.0;
+        double sum=0;
+        for (int i=0; i<levels.size();i++){
+            sum+=levels.get(i).calculateVolume();
+        }
+        return sum;
     }
 
+    public double sumLightPower(){
+        double sum=0.0;
+        for(int i=0;i<levels.size(); i++){
+            sum+=levels.get(i).sumLightPower();
+        }
+        return sum;
+    }
     /**
      * Calculating lighting power of building
      * @return
      */
     public double calculateLightPower(){
-        return 0.0;
+        return sumLightPower()/calculateArea();
     }
 
 
