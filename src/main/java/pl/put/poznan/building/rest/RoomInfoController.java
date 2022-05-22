@@ -8,6 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.model.Room;
 
+/**
+ * REST controller for room class
+ */
 @RestController
 public class RoomInfoController {
     private static final Logger logger = LoggerFactory.getLogger(LevelInfoController.class);

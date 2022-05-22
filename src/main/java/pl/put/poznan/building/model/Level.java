@@ -4,8 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
+/**
+ * Class for Level, which is part of the building
+ */
 public class Level extends BuildingComponent{
 
+    /**
+     * Array of all rooms, which are on this floor
+     */
     @JsonProperty("rooms")
     private ArrayList<Room> rooms;
 
@@ -17,8 +23,6 @@ public class Level extends BuildingComponent{
         for(int i=0;i<rooms.size(); i++){
             sum+=rooms.get(i).getArea();
         }
-
-
         return sum;
     }
 
@@ -30,13 +34,14 @@ public class Level extends BuildingComponent{
         for(int i=0;i<rooms.size(); i++){
             sum+=rooms.get(i).getVolume();
         }
-
-
         return sum;
 
     }
 
-
+    /**
+     *  Calculating sum of light power of the level
+     * @return sum of light power values
+     */
     public double sumLightPower(){
         double sum=0.0;
         for(int i=0;i<rooms.size(); i++){
@@ -46,7 +51,7 @@ public class Level extends BuildingComponent{
     }
     /**
      * Calculating lighting power of level
-     * @return
+     * @return lighting power per m^2
      */
     public double calculateLightPower(){
         return sumLightPower()/calculateArea();

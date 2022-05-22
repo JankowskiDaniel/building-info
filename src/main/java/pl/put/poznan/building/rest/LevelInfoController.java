@@ -8,6 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.model.Level;
 
+/**
+ * Rest controller for level class
+ */
 @RestController
 public class LevelInfoController {
     private static final Logger logger = LoggerFactory.getLogger(LevelInfoController.class);

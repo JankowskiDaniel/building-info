@@ -5,17 +5,22 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
+/**
+ * Class building objects
+ */
 public class Building extends BuildingComponent{
 
-    //list with levels in building
+    /**
+     * Array with all levels, which are in this building
+     */
     @JsonProperty("levels")
     private ArrayList<Level> levels;
 
 
-    //wszystkie trzy ponizsze funkcje beda zadeklarowane w interfejsie i są one wspólne dla pozostałych modeli
 
     /**
-     * Calculate area of building
+     * Calculating area of the building
+     * @return area of the building
      */
     public double calculateArea(){
         double sum=0;
@@ -26,7 +31,8 @@ public class Building extends BuildingComponent{
     }
 
     /**
-     * Calculating volume for building
+     * Calculating volume of the building
+     * @return volume of the building
      */
     public double calculateVolume(){
         double sum=0;
@@ -36,6 +42,10 @@ public class Building extends BuildingComponent{
         return sum;
     }
 
+    /**
+     * Calculating sum of light power of the building
+     * @return sum of light power values
+     */
     public double sumLightPower(){
         double sum=0.0;
         for(int i=0;i<levels.size(); i++){
@@ -44,8 +54,8 @@ public class Building extends BuildingComponent{
         return sum;
     }
     /**
-     * Calculating lighting power of building
-     * @return
+     * Calculating lighting power of building per m^2
+     * @return lighting power
      */
     public double calculateLightPower(){
         return sumLightPower()/calculateArea();

@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
+/**
+ * Class for representing room
+ */
 public class Room extends BuildingComponent{
 
     @JsonProperty("area")
@@ -28,6 +31,11 @@ public class Room extends BuildingComponent{
     public double getLightingpower() {
         return lightingpower;
     }
+
+    /**
+     * Calculating lighting power per m^2 of the room
+     * @return lighting power per m^2
+     */
     public double calculateLightPower(){
         return lightingpower/area;
     }

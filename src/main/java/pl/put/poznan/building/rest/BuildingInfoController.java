@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.model.Building;
 import pl.put.poznan.building.model.Level;
 
-
+/**
+ * REST controller for building class
+ */
 @RestController
 public class BuildingInfoController {
 
