@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * Class building objects
+ * Class for buildings
  */
 public class Building extends BuildingComponent{
 
