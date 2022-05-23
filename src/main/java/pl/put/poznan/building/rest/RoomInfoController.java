@@ -19,14 +19,14 @@ public class RoomInfoController {
     @PostMapping("/room/area")
     public String area(@RequestBody Room room) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
-        node.put("Area", room.calculateArea());
+        node.put("Area", room.getArea());
         return mapper.writeValueAsString(node);
     }
 
     @PostMapping("/room/volume")
     public String volume(@RequestBody Room room) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
-        node.put("Volume", room.calculateVolume());
+        node.put("Volume", room.getVolume());
         return mapper.writeValueAsString(node);
     }
 

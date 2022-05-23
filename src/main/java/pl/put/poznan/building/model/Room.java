@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Class for representing room
  */
-public class Room extends BuildingComponent{
+public class Room{
 
     @JsonProperty("area")
     private double area;
