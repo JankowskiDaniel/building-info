@@ -56,6 +56,10 @@ public class Building extends BuildingComponent{
         }
         return sum;
     }
+    /**
+     * Calculating sum of heating energy consumption of the building
+     * @return sum of heating energy consumption
+     */
     public double sumHeatingenergy(){
         double sum=0.0;
         for(int i=0;i<levels.size(); i++){
@@ -63,6 +67,10 @@ public class Building extends BuildingComponent{
         }
         return sum;
     }
+    /**
+     * Calculating average heating energy consumption of the building per m^3
+     * @return sum of heating energy consumption
+     */
     public double calculateConsumption(){
         return sumHeatingenergy()/calculateVolume();
     }
