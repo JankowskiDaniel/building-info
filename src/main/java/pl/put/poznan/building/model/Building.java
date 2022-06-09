@@ -100,4 +100,17 @@ public class Building extends BuildingComponent{
         }
         return sum;
     }
+
+    public int calculateDefibrillators(){
+        int additional = levels.size()/10;
+        return additional+1;
+    }
+
+    public int calculateAidkits(){
+        int sum = 0;
+        for(int i=0; i< levels.size(); i++){
+            sum+=levels.get(i).calculateAidkits();
+        }
+        return sum;
+    }
 }

@@ -76,9 +76,16 @@ public class Level extends BuildingComponent{
     }
 
     public int calculateExtinguisher(){
+        int additional = rooms.size()/10;
+        return additional+1;
+    }
+
+    public int calculateAidkits(){
         int sum = 0;
         for(int i=0; i< rooms.size(); i++){
-            sum+=rooms.get(i).calculateExtinguisher();
+            if(rooms.get(i).ifAidkit()){
+                sum+=1;
+            }
         }
         return sum;
     }

@@ -52,5 +52,12 @@ public class Room extends BuildingComponent{
     public double calculateLightPower(){
         return lightingpower/area;
     }
-    public int calculateExtinguisher(){return 2;}
+
+    public boolean ifAidkit(){
+        if(area >= 15.0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
