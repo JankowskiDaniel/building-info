@@ -8,5 +8,6 @@ public interface BuildingSpace {
     public double calculateArea();
     public double calculateVolume();
     public double calculateLightPower();
+    public double calculateConsumption();
     public double sumLightPower();
 }

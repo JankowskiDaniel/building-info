@@ -49,16 +49,22 @@ public class Level extends BuildingComponent{
         }
         return sum;
     }
+    public double sumHeatingenergy(){
+        double sum=0.0;
+        for(int i=0;i<rooms.size(); i++){
+            sum+=rooms.get(i).getHeatingenergy();
+        }
+        return sum;
+    }
+    public double calculateConsumption(){
+        return sumHeatingenergy()/calculateVolume();
+    }
     /**
      * Calculating lighting power of level
      * @return lighting power per m^2
      */
     public double calculateLightPower(){
         return sumLightPower()/calculateArea();
-    }
-
-    public double calculateConsumption(){
-        return 0.0;
     }
 
     public int calculateExtinguisher(){
