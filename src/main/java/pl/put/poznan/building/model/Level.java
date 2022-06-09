@@ -82,4 +82,12 @@ public class Level extends BuildingComponent{
         }
         return sum;
     }
+
+    public ArrayList<Room> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(ArrayList<Room> rooms) {
+        this.rooms = rooms;
+    }
 }

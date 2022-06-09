@@ -19,8 +19,19 @@ public class Building extends BuildingComponent{
     @JsonProperty("heatlimit")
     private double heatlimit;
 
+    private ArrayList<String> wrongrooms;
 
-
+    public void HeatingLimitRooms(){
+        for (int i=0; i<levels.size(); i++){
+            Level lvl=levels.get(i);
+            for (int j=0; j<lvl.getRooms().size();j++){
+                Room rm=lvl.getRooms().get(j);
+                if (rm.calculateConsumption()>heatlimit){
+                    wrongrooms.add(rm.getName());
+                }
+        }
+    }
+    }
     /**
      * Calculating area of the building
      * @return area of the building
