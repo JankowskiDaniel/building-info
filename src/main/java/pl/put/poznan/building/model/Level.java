@@ -5,65 +5,45 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * Class for Level, which is part of the building
+ * Class for representing room
  */
-public class Level extends BuildingComponent{
+public class Room extends BuildingComponent{
 
-    /**
-     * Array of all rooms, which are on this floor
-     */
-    @JsonProperty("rooms")
-    private ArrayList<Room> rooms;
+    @JsonProperty("area")
+    private double area;
 
-    /**
-     * Calculate area of level
-     */
-    public double calculateArea(){
-        double sum=0.0;
-        for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getArea();
-        }
-        return sum;
+    @JsonProperty("volume")
+    private double volume;
+
+    @JsonProperty("lightingpower")
+    private double lightingpower;
+
+    @JsonProperty("heatingenergy")
+    private double heatingenergy;
+
+    public double getArea() {
+        return area;
+    }
+
+
+    public double getVolume() {
+        return volume;
+    }
+
+    public double getHeatingenergy(){return heatingenergy;}
+
+
+    public double getLightingpower() {
+        return lightingpower;
     }
 
     /**
-     * Calculating volume for level
-     */
-    public double calculateVolume(){
-        double sum=0.0;
-        for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getVolume();
-        }
-        return sum;
-
-    }
-
-    /**
-     *  Calculating sum of light power of the level
-     * @return sum of light power values
-     */
-    public double sumLightPower(){
-        double sum=0.0;
-        for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getLightingpower();
-        }
-        return sum;
-    }
-    public double sumheatingenergy(){
-        double sum=0.0;
-        for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getHeatingenergy();
-        }
-        return sum;
-
-    }
-    public double calculateConsumption(){return sumheatingenergy()/calculateVolume();}
-    /**
-     * Calculating lighting power of level
+     * Calculating lighting power per m^2 of the room
      * @return lighting power per m^2
      */
     public double calculateLightPower(){
-        return sumLightPower()/calculateArea();
+        return lightingpower/area;
     }
+    public double calculateConsumption(){return heatingenergy/volume;}
 
 }
