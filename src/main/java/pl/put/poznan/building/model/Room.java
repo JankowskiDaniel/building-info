@@ -18,6 +18,10 @@ public class Room{
     @JsonProperty("lightingpower")
     private double lightingpower;
 
+    @JsonProperty("heatingenergy")
+    private double heatingenergy;
+
+
     public double getArea() {
         return area;
     }
@@ -26,7 +30,12 @@ public class Room{
     public double getVolume() {
         return volume;
     }
-
+    public double getHeatingenergy(){
+        return heatingenergy;
+    }
+    public double calculateConsumption(){
+        return heatingenergy/getVolume();
+    }
 
     public double getLightingpower() {
         return lightingpower;
