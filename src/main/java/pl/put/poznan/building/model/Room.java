@@ -9,6 +9,12 @@ import java.util.ArrayList;
  */
 public class Room{
 
+    public Room(double area, double volume, double lightingpower) {
+        this.area = area;
+        this.volume = volume;
+        this.lightingpower = lightingpower;
+    }
+
     @JsonProperty("area")
     private double area;
 
@@ -17,6 +23,20 @@ public class Room{
 
     @JsonProperty("lightingpower")
     private double lightingpower;
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
+
+
+    public void setLightingpower(double lightingpower) {
+        this.lightingpower = lightingpower;
+    }
 
     public double getArea() {
         return area;

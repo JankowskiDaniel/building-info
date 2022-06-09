@@ -10,6 +10,10 @@ import java.util.ArrayList;
  */
 public class Building extends BuildingComponent{
 
+    public Building(ArrayList<Level> levels) {
+        this.levels = levels;
+    }
+
     /**
      * Array with all levels, which are in this building
      */
@@ -59,6 +63,14 @@ public class Building extends BuildingComponent{
      */
     public double calculateLightPower(){
         return sumLightPower()/calculateArea();
+    }
+
+    /**
+     * Adds levels to the level list, used while testing
+     *
+     */
+    public void addLevel(Level level){
+        this.levels.add(level);
     }
 
 
