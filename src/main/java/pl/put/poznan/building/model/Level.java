@@ -9,9 +9,6 @@ import java.util.ArrayList;
  */
 public class Level extends BuildingComponent{
 
-    public Level(ArrayList<Room> rooms) {
-        this.rooms = rooms;
-    }
 
     /**
      * Array of all rooms, which are on this floor
@@ -108,10 +105,10 @@ public class Level extends BuildingComponent{
      *
      */
 
-    public void addRoom(double area, double volume, double lightingpower){
-        Room room = new Room(area, volume, lightingpower);
-        this.rooms.add(room);
-    }
+//    public void addRoom(double area, double volume, double lightingpower){
+//        Room room = new Room(area, volume, lightingpower);
+//        this.rooms.add(room);
+//    }
 
 
 }

@@ -10,9 +10,6 @@ import java.util.ArrayList;
  */
 public class Building extends BuildingComponent{
 
-    public Building(ArrayList<Level> levels) {
-        this.levels = levels;
-    }
 
     /**
      * Array with all levels, which are in this building

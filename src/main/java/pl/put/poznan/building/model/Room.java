@@ -9,11 +9,6 @@ import java.util.ArrayList;
  */
 public class Room extends BuildingComponent{
 
-    public Room(double area, double volume, double lightingpower) {
-        this.area = area;
-        this.volume = volume;
-        this.lightingpower = lightingpower;
-    }
 
     @JsonProperty("area")
     private double area;
