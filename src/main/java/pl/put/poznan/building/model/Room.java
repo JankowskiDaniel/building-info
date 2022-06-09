@@ -33,6 +33,10 @@ public class Room{
     public double getHeatingenergy(){
         return heatingenergy;
     }
+    /**
+     * Calculating average heating energy consumption of the building per m^3
+     * @return sum of heating energy consumption
+     */
     public double calculateConsumption(){
         return heatingenergy/getVolume();
     }
