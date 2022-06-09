@@ -35,6 +35,10 @@ public abstract class BuildingComponent implements BuildingSpace{
     public double calculateLightPower(){
         return 0.0;};
 
+    public double calculateConsumption(){
+        return 0.0;
+    }
+
     /**
      *
      * @return Lighting power
