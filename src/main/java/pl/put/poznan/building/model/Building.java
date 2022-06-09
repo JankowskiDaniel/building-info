@@ -53,6 +53,15 @@ public class Building extends BuildingComponent{
         }
         return sum;
     }
+    public double sumheatingenergy(){
+        double sum=0.0;
+        for(int i=0;i<levels.size(); i++){
+            sum+=levels.get(i).sumheatingenergy();
+        }
+        return sum;
+
+    }
+    public double calculateConsumption(){return sumheatingenergy()/calculateVolume();}
     /**
      * Calculating lighting power of building per m^2
      * @return lighting power
