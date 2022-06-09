@@ -13,10 +13,10 @@ class LevelTest {
     @BeforeAll
     public static void setUp() {
         ArrayList<Room> rooms = new ArrayList<>();
-//        level = new Level(rooms);
-//        level.addRoom(300,200,123);
-//        level.addRoom(1000,1200,12);
-//        level.addRoom(3400,100000,3000);
+        level = new Level(rooms);
+        level.addRoom(300,200,123);
+        level.addRoom(1000,1200,12);
+        level.addRoom(3400,100000,3000);
     }
 
     @Test

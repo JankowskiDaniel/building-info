@@ -1,5 +1,7 @@
 package pl.put.poznan.building.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -9,6 +11,12 @@ import java.util.ArrayList;
  */
 public class Room extends BuildingComponent{
 
+    @JsonCreator
+    public Room(double area, double volume, double power){
+        this.area = area;
+        this.volume = volume;
+        this.lightingpower = power;
+    }
 
     @JsonProperty("area")
     private double area;
@@ -40,6 +48,7 @@ public class Room extends BuildingComponent{
     }
 
 
+    @JsonIgnore
     public double getArea() {
         return area;
     }
