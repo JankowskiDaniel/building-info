@@ -44,4 +44,11 @@ public class LevelInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/level/extinguisher")
+    public String extinguisher(@RequestBody Level level) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of fire extinguishers required", level.calculateExtinguisher());
+        return mapper.writeValueAsString(node);
+    }
+
 }

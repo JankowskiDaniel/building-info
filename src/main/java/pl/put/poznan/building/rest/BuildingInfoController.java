@@ -46,5 +46,13 @@ public class BuildingInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/building/extinguisher")
+    public String extinguisher(@RequestBody Building building) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of fire extinguishers required", building.calculateExtinguisher());
+        return mapper.writeValueAsString(node);
+    }
+
+
 }
 

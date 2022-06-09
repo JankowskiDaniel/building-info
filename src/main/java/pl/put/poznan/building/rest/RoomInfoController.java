@@ -44,4 +44,11 @@ public class RoomInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/room/extinguisher")
+    public String extinguisher(@RequestBody Room room) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of fire extinguishers required", room.calculateExtinguisher());
+        return mapper.writeValueAsString(node);
+    }
+
 }

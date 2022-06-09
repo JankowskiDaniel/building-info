@@ -41,4 +41,6 @@ public class Room{
     }
 
     public double calculateConsumption() { return 0.0;}
+
+    public int calculateExtinguisher(){return 2;}
 }

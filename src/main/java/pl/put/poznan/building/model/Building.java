@@ -66,5 +66,13 @@ public class Building extends BuildingComponent{
 
     public double calculateConsumption(){return 0.0;}
 
+    public int calculateExtinguisher(){
+        int sum = 0;
+        for(int i=0; i< levels.size(); i++){
+            sum+=levels.get(i).calculateExtinguisher();
+        }
+        return sum;
+    }
+
 
 }
