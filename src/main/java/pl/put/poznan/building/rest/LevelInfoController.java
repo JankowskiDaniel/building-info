@@ -37,4 +37,11 @@ public class LevelInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/level/heatconsumption")
+    public String heatconsumption(@RequestBody Level level) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Heat consumption", level.calculateConsumption());
+        return mapper.writeValueAsString(node);
+    }
+
 }

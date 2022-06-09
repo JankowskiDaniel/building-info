@@ -37,4 +37,11 @@ public class RoomInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/room/heatconsumption")
+    public String heatconsumption(@RequestBody Room room) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Heat consumption", room.calculateConsumption());
+        return mapper.writeValueAsString(node);
+    }
+
 }

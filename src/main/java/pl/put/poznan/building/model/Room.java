@@ -40,5 +40,5 @@ public class Room{
         return lightingpower/area;
     }
 
-
+    public double calculateConsumption() { return 0.0;}
 }

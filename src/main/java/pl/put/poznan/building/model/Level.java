@@ -57,4 +57,5 @@ public class Level extends BuildingComponent{
         return sumLightPower()/calculateArea();
     }
 
+    public double calculateConsumption(){ return 0.0;}
 }

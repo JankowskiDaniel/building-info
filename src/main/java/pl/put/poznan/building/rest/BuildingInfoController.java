@@ -39,5 +39,12 @@ public class BuildingInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/building/heatconsumption")
+    public String heatconsumption(@RequestBody Building building) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Heat consumption", building.calculateConsumption());
+        return mapper.writeValueAsString(node);
+    }
+
 }
 

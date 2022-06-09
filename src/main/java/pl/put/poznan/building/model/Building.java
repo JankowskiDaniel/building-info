@@ -16,6 +16,9 @@ public class Building extends BuildingComponent{
     @JsonProperty("levels")
     private ArrayList<Level> levels;
 
+    @JsonProperty("heatlimit")
+    private double heatlimit;
+
 
 
     /**
@@ -60,6 +63,8 @@ public class Building extends BuildingComponent{
     public double calculateLightPower(){
         return sumLightPower()/calculateArea();
     }
+
+    public double calculateConsumption(){return 0.0;}
 
 
 }
