@@ -37,4 +37,25 @@ public class LevelInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/level/heatconsumption")
+    public String heatconsumption(@RequestBody Level level) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Heat consumption", level.calculateConsumption());
+        return mapper.writeValueAsString(node);
+    }
+
+    @PostMapping("/level/extinguisher")
+    public String extinguisher(@RequestBody Level level) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of fire extinguishers required", level.calculateExtinguisher());
+        return mapper.writeValueAsString(node);
+    }
+
+    @PostMapping("/level/aidkits")
+    public String aidkit(@RequestBody Level level) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of first aid kits: ", level.calculateAidkits());
+        return mapper.writeValueAsString(node);
+    }
+
 }

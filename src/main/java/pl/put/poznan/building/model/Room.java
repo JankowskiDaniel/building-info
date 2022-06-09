@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Class for representing room
  */
-public class Room{
+public class Room extends BuildingComponent{
 
     @JsonProperty("area")
     private double area;
@@ -18,6 +18,10 @@ public class Room{
     @JsonProperty("lightingpower")
     private double lightingpower;
 
+    @JsonProperty("heatingenergy")
+    private double heatingenergy;
+
+
     public double getArea() {
         return area;
     }
@@ -26,7 +30,16 @@ public class Room{
     public double getVolume() {
         return volume;
     }
-
+    public double getHeatingenergy(){
+        return heatingenergy;
+    }
+    /**
+     * Calculating average heating energy consumption of the building per m^3
+     * @return sum of heating energy consumption
+     */
+    public double calculateConsumption(){
+        return heatingenergy/getVolume();
+    }
 
     public double getLightingpower() {
         return lightingpower;
@@ -40,5 +53,11 @@ public class Room{
         return lightingpower/area;
     }
 
-
+    public boolean ifAidkit(){
+        if(area >= 15.0){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

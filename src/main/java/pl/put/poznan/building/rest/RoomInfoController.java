@@ -37,4 +37,18 @@ public class RoomInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/room/heatconsumption")
+    public String heatconsumption(@RequestBody Room room) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Heat consumption", room.calculateConsumption());
+        return mapper.writeValueAsString(node);
+    }
+
+    @PostMapping("/room/firstaidkit")
+    public String extinguisher(@RequestBody Room room) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("First aid kit required: ", room.ifAidkit());
+        return mapper.writeValueAsString(node);
+    }
+
 }

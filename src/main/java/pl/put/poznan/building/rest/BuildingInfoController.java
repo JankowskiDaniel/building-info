@@ -39,5 +39,34 @@ public class BuildingInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/building/heatconsumption")
+    public String heatconsumption(@RequestBody Building building) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Heat consumption", building.calculateConsumption());
+        return mapper.writeValueAsString(node);
+    }
+
+    @PostMapping("/building/extinguisher")
+    public String extinguisher(@RequestBody Building building) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of required fire extinguishers: ", building.calculateExtinguisher());
+        return mapper.writeValueAsString(node);
+    }
+
+    @PostMapping("/building/aidkits")
+    public String aidkit(@RequestBody Building building) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of required first aid kits: ", building.calculateAidkits());
+        return mapper.writeValueAsString(node);
+    }
+
+    @PostMapping("/building/defibrillators")
+    public String defibrillators(@RequestBody Building building) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        node.put("Number of required defibrillators: ", building.calculateDefibrillators());
+        return mapper.writeValueAsString(node);
+    }
+
+
 }
 

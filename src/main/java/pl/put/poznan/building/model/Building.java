@@ -16,8 +16,22 @@ public class Building extends BuildingComponent{
     @JsonProperty("levels")
     private ArrayList<Level> levels;
 
+    @JsonProperty("heatlimit")
+    private double heatlimit;
 
+    private ArrayList<String> wrongrooms;
 
+    public void HeatingLimitRooms(){
+        for (int i=0; i<levels.size(); i++){
+            Level lvl=levels.get(i);
+            for (int j=0; j<lvl.getRooms().size();j++){
+                Room rm=lvl.getRooms().get(j);
+                if (rm.calculateConsumption()>heatlimit){
+                    wrongrooms.add(rm.getName());
+                }
+        }
+    }
+    }
     /**
      * Calculating area of the building
      * @return area of the building
@@ -54,6 +68,24 @@ public class Building extends BuildingComponent{
         return sum;
     }
     /**
+     * Calculating sum of heating energy consumption of the building
+     * @return sum of heating energy consumption
+     */
+    public double sumHeatingenergy(){
+        double sum=0.0;
+        for(int i=0;i<levels.size(); i++){
+            sum+=levels.get(i).sumHeatingenergy();
+        }
+        return sum;
+    }
+    /**
+     * Calculating average heating energy consumption of the building per m^3
+     * @return sum of heating energy consumption
+     */
+    public double calculateConsumption(){
+        return sumHeatingenergy()/calculateVolume();
+    }
+    /**
      * Calculating lighting power of building per m^2
      * @return lighting power
      */
@@ -61,5 +93,24 @@ public class Building extends BuildingComponent{
         return sumLightPower()/calculateArea();
     }
 
+    public int calculateExtinguisher(){
+        int sum = 0;
+        for(int i=0; i< levels.size(); i++){
+            sum+=levels.get(i).calculateExtinguisher();
+        }
+        return sum;
+    }
 
+    public int calculateDefibrillators(){
+        int additional = levels.size()/10;
+        return additional+1;
+    }
+
+    public int calculateAidkits(){
+        int sum = 0;
+        for(int i=0; i< levels.size(); i++){
+            sum+=levels.get(i).calculateAidkits();
+        }
+        return sum;
+    }
 }
