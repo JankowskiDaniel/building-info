@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Class for representing room
  */
-public class Room{
+public class Room extends BuildingComponent{
 
     @JsonProperty("area")
     private double area;
@@ -18,6 +18,9 @@ public class Room{
     @JsonProperty("lightingpower")
     private double lightingpower;
 
+    @JsonProperty("heatingenergy")
+    private double heatingenergy;
+
     public double getArea() {
         return area;
     }
@@ -26,6 +29,8 @@ public class Room{
     public double getVolume() {
         return volume;
     }
+
+    public double getHeatingenergy(){return heatingenergy;}
 
 
     public double getLightingpower() {
@@ -39,6 +44,6 @@ public class Room{
     public double calculateLightPower(){
         return lightingpower/area;
     }
-
+    public double calculateConsumption(){return heatingenergy/volume;}
 
 }
