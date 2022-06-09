@@ -10,6 +10,10 @@ import java.util.ArrayList;
  */
 public class Building extends BuildingComponent{
 
+    public Building(ArrayList<Level> levels) {
+        this.levels = levels;
+    }
+
     /**
      * Array with all levels, which are in this building
      */
@@ -100,6 +104,15 @@ public class Building extends BuildingComponent{
         }
         return sum;
     }
+
+    /**
+     * Adds levels to the level list, used while testing
+     *
+     */
+    public void addLevel(Level level){
+        this.levels.add(level);
+    }
+
 
     public int calculateDefibrillators(){
         int additional = levels.size()/10;

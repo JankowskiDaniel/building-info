@@ -9,6 +9,10 @@ import java.util.ArrayList;
  */
 public class Level extends BuildingComponent{
 
+    public Level(ArrayList<Room> rooms) {
+        this.rooms = rooms;
+    }
+
     /**
      * Array of all rooms, which are on this floor
      */
@@ -75,6 +79,7 @@ public class Level extends BuildingComponent{
         return sumLightPower()/calculateArea();
     }
 
+
     public int calculateExtinguisher(){
         int additional = rooms.size()/10;
         return additional+1;
@@ -97,4 +102,16 @@ public class Level extends BuildingComponent{
     public void setRooms(ArrayList<Room> rooms) {
         this.rooms = rooms;
     }
+
+    /**
+     * Adds rooms to the room list, used while testing
+     *
+     */
+
+    public void addRoom(double area, double volume, double lightingpower){
+        Room room = new Room(area, volume, lightingpower);
+        this.rooms.add(room);
+    }
+
+
 }
