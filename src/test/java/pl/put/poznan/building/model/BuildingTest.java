@@ -16,8 +16,8 @@ class BuildingTest {
     public static void setUp() {
         ArrayList<Room> rooms = new ArrayList<>();
         ArrayList<Room> roomsTwo = new ArrayList<>();
-//        level = new Level(rooms);
-//        levelTwo = new Level(roomsTwo);
+        level = new Level(rooms);
+        levelTwo = new Level(roomsTwo);
         level.addRoom(124,154,198);
         level.addRoom(546,111,309);
         level.addRoom(987,3456,174);
@@ -25,7 +25,7 @@ class BuildingTest {
         levelTwo.addRoom(145,500,345);
         levelTwo.addRoom(130,256,200);
         ArrayList<Level> levels = new ArrayList<>();
-//        building = new Building(levels);
+        building = new Building(levels);
         building.addLevel(level);
         building.addLevel(levelTwo);
 

@@ -1,5 +1,7 @@
 package pl.put.poznan.building.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -9,16 +11,21 @@ import java.util.ArrayList;
  */
 public class Level extends BuildingComponent{
 
-
+    @JsonCreator
+    public Level(ArrayList<Room> rooms){
+        this.rooms = rooms;
+    }
     /**
      * Array of all rooms, which are on this floor
      */
     @JsonProperty("rooms")
     private ArrayList<Room> rooms;
 
+
     /**
      * Calculate area of level
      */
+    @JsonIgnore
     public double calculateArea(){
         double sum=0.0;
         for(int i=0;i<rooms.size(); i++){
@@ -96,6 +103,7 @@ public class Level extends BuildingComponent{
         return rooms;
     }
 
+    @JsonIgnore
     public void setRooms(ArrayList<Room> rooms) {
         this.rooms = rooms;
     }
@@ -105,10 +113,11 @@ public class Level extends BuildingComponent{
      *
      */
 
-//    public void addRoom(double area, double volume, double lightingpower){
-//        Room room = new Room(area, volume, lightingpower);
-//        this.rooms.add(room);
-//    }
+    @JsonIgnore
+    public void addRoom(double area, double volume, double lightingpower){
+        Room room = new Room(area, volume, lightingpower);
+        this.rooms.add(room);
+    }
 
 
 }
