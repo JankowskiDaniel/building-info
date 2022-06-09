@@ -49,6 +49,15 @@ public class Level extends BuildingComponent{
         }
         return sum;
     }
+    public double sumheatingenergy(){
+        double sum=0.0;
+        for(int i=0;i<rooms.size(); i++){
+            sum+=rooms.get(i).getHeatingenergy();
+        }
+        return sum;
+
+    }
+    public double calculateConsumption(){return sumheatingenergy()/calculateVolume();}
     /**
      * Calculating lighting power of level
      * @return lighting power per m^2
