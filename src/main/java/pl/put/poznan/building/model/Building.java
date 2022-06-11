@@ -15,6 +15,9 @@ public class Building extends BuildingComponent{
     @JsonCreator
     public Building(ArrayList<Level> levels){
         this.levels = levels;
+        this.wrongrooms = new ArrayList<>();
+        this.heatlimit = 0.0;
+
     }
 
     /**
@@ -34,10 +37,20 @@ public class Building extends BuildingComponent{
             for (int j=0; j<lvl.getRooms().size();j++){
                 Room rm=lvl.getRooms().get(j);
                 if (rm.calculateConsumption()>heatlimit){
-                    wrongrooms.add(rm.getName());
+                    this.wrongrooms.add(String.valueOf(rm.getId()));
                 }
         }
     }
+    }
+
+    public String limitRoomsStr(){
+        StringBuffer sb = new StringBuffer();
+        for(int i=0; i< wrongrooms.size(); i++){
+            sb.append(wrongrooms.get(i));
+            sb.append(" ");
+        }
+        String str = sb.toString();
+        return str;
     }
     /**
      * Calculating area of the building

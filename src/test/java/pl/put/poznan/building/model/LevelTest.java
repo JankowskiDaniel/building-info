@@ -51,6 +51,10 @@ class LevelTest {
         assertEquals(0.6670212765957447,level.calculateLightPower());
     }
 
+    //tutaj trzeba dopełnić nwm jak to zrobić z mockami pzdr antek
+    @Test
+    public void testCalculateConsumption(){assertEquals(0,level.calculateConsumption());}
+
 
 
 

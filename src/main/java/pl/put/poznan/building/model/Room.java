@@ -12,11 +12,15 @@ import java.util.ArrayList;
 public class Room extends BuildingComponent{
 
     @JsonCreator
-    public Room(double area, double volume, double power){
+    public Room(double area, double volume, double power, int id,double heat){
         this.area = area;
         this.volume = volume;
         this.lightingpower = power;
+        this.id = id;
+        this.heatingenergy=heat;
     }
+    @JsonProperty("id")
+    private Integer id;
 
     @JsonProperty("area")
     private double area;
@@ -87,4 +91,7 @@ public class Room extends BuildingComponent{
             return false;
         }
     }
+
+    public Integer getId(){return this.id;}
+
 }

@@ -67,6 +67,14 @@ public class BuildingInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    @PostMapping("/building/heatlimit")
+    public String heatlimit(@RequestBody Building building) throws JsonProcessingException {
+        ObjectNode node = mapper.createObjectNode();
+        building.HeatingLimitRooms();
+        node.put("Number of required defibrillators: ", building.limitRoomsStr());
+        return mapper.writeValueAsString(node);
+    }
+
 
 }
 
