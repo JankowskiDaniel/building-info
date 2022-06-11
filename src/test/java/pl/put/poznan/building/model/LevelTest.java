@@ -15,16 +15,16 @@ class LevelTest {
     public static void setUp() {
         ArrayList<Room> rooms = new ArrayList<>();
         level = new Level(rooms);
-//        level.addRoom(300,200,123);
-//        level.addRoom(1000,1200,12);
-//        level.addRoom(3400,100000,3000);
+//        level.addRoom(300,200,123,200);
+//        level.addRoom(1000,1200,12,145);
+//        level.addRoom(3400,100000,3000,223);
     }
 
     @Test
     public void testCalculateArea(){
-        Room room1 = mock(Room.class, withSettings().useConstructor(300.0, 200.0, 123.0));
-        Room room2 = mock(Room.class, withSettings().useConstructor(1000.0,1200.0,12.0));
-        Room room3 = mock(Room.class, withSettings().useConstructor(3400.0,100000.0,3000.0));
+        Room room1 = mock(Room.class, withSettings().useConstructor(300.0, 200.0, 123.0,200));
+        Room room2 = mock(Room.class, withSettings().useConstructor(1000.0,1200.0,12.0,145));
+        Room room3 = mock(Room.class, withSettings().useConstructor(3400.0,100000.0,3000.0,223));
         when(room1.getArea()).thenReturn(300.0);
         when(room2.getArea()).thenReturn(1000.0);
         when(room3.getArea()).thenReturn(3400.0);
@@ -50,6 +50,8 @@ class LevelTest {
     public void testCalculateLightPower(){
         assertEquals(0.6670212765957447,level.calculateLightPower());
     }
+    @Test
+    public void testCalculateConsumption(){assertEquals(0,level.calculateConsumption());}
 
 
 

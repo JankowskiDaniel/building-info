@@ -18,12 +18,12 @@ class BuildingTest {
         ArrayList<Room> roomsTwo = new ArrayList<>();
         level = new Level(rooms);
         levelTwo = new Level(roomsTwo);
-        level.addRoom(124,154,198);
-        level.addRoom(546,111,309);
-        level.addRoom(987,3456,174);
-        levelTwo.addRoom(189,143,2000);
-        levelTwo.addRoom(145,500,345);
-        levelTwo.addRoom(130,256,200);
+        level.addRoom(124,154,198,202);
+        level.addRoom(546,111,309,148);
+        level.addRoom(987,3456,174,2137);
+        levelTwo.addRoom(189,143,2000,421);
+        levelTwo.addRoom(145,500,345,1);
+        levelTwo.addRoom(130,256,200,3);
         ArrayList<Level> levels = new ArrayList<>();
         building = new Building(levels);
         building.addLevel(level);
@@ -51,4 +51,6 @@ class BuildingTest {
         assertEquals(1.520980669495521,building.calculateLightPower());
     }
 
+    @Test
+    public void testCalculateConsumption(){assertEquals(0.6303030303030303,building.calculateConsumption());}
 }
