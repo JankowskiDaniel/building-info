@@ -18,12 +18,14 @@ class BuildingTest {
         ArrayList<Room> roomsTwo = new ArrayList<>();
         level = new Level(rooms);
         levelTwo = new Level(roomsTwo);
+
         level.addRoom(124,154,198, 1,100);
         level.addRoom(546,111,309, 2,200);
         level.addRoom(987,3456,174, 3,3);
         levelTwo.addRoom(189,143,2000, 1,420);
         levelTwo.addRoom(145,500,345,2,2148);
         levelTwo.addRoom(130,256,200,3,421);
+
         ArrayList<Level> levels = new ArrayList<>();
         building = new Building(levels);
         building.addLevel(level);
