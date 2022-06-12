@@ -120,7 +120,7 @@ class LevelTest {
     }
 
     @Test
-    public void testCalculateSumExcept(){
+    public void testCalculateSumException(){
         level.addRoom(-2,154,-200, 6,100);
         assertThrows(IllegalArgumentException.class,  () -> {
             level.sumLightPower();
@@ -129,7 +129,7 @@ class LevelTest {
     }
 
     @Test
-    public void testCalculateLightExcept(){
+    public void testCalculateLightException(){
         level.addRoom(-2,154,-200, 8,100);
         assertThrows(IllegalArgumentException.class,  () -> {
             level.calculateLightPower();
