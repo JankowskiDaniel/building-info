@@ -131,6 +131,9 @@ public class Building extends BuildingComponent{
         this.levels.add(level);
     }
 
+    @JsonIgnore
+    public void setLevels(ArrayList<Level> levels){this.levels = levels;}
+
 
     public int calculateDefibrillators(){
         int additional = levels.size()/10;
