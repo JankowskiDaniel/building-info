@@ -101,7 +101,50 @@ class LevelTest {
         level.setRooms(newRooms);
         assertEquals(2.9915187376725838264299802761341, level.calculateConsumption());
     }
+    @Test
+    public void testCalculateAreaException(){
+        level.addRoom(-2,154,198, 2,100);
+        assertThrows(IllegalArgumentException.class,  () -> {
+            level.calculateArea();
+        });
 
+    }
+
+    @Test
+    public void testCalculateVolumeException(){
+        level.addRoom(200,-100,198, 5,100);
+        assertThrows(IllegalArgumentException.class,  () -> {
+            level.calculateVolume();
+        });
+
+    }
+
+    @Test
+    public void testCalculateSumExcept(){
+        level.addRoom(-2,154,-200, 6,100);
+        assertThrows(IllegalArgumentException.class,  () -> {
+            level.sumLightPower();
+        });
+
+    }
+
+    @Test
+    public void testCalculateLightExcept(){
+        level.addRoom(-2,154,-200, 8,100);
+        assertThrows(IllegalArgumentException.class,  () -> {
+            level.calculateLightPower();
+        });
+
+    }
+
+    @Test
+    public void testCalculateConsumptionException(){
+        level.addRoom(-2,154,-200, 10,-2);
+        assertThrows(IllegalArgumentException.class,  () -> {
+            level.calculateConsumption();
+        });
+
+    }
 
 
 

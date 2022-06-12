@@ -29,7 +29,12 @@ public class Level extends BuildingComponent{
     public double calculateArea(){
         double sum=0.0;
         for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getArea();
+            if (rooms.get(i).getArea() > 0) {
+                sum += rooms.get(i).getArea();
+            }
+            else{
+                throw new IllegalArgumentException("The arguments must be positive");
+            }
         }
         return sum;
     }
@@ -40,7 +45,12 @@ public class Level extends BuildingComponent{
     public double calculateVolume(){
         double sum=0.0;
         for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getVolume();
+            if (rooms.get(i).getVolume()>0) {
+                sum += rooms.get(i).getVolume();
+            }
+            else{
+                throw new IllegalArgumentException("The arguments must be positive");
+            }
         }
         return sum;
 
@@ -53,7 +63,12 @@ public class Level extends BuildingComponent{
     public double sumLightPower(){
         double sum=0.0;
         for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getLightingpower();
+            if (rooms.get(i).getLightingpower()>0) {
+                sum += rooms.get(i).getLightingpower();
+            }
+            else{
+                throw new IllegalArgumentException("The arguments must be positive");
+            }
         }
         return sum;
     }
@@ -64,7 +79,12 @@ public class Level extends BuildingComponent{
     public double sumHeatingenergy(){
         double sum=0.0;
         for(int i=0;i<rooms.size(); i++){
-            sum+=rooms.get(i).getHeatingenergy();
+            if (rooms.get(i).getHeatingenergy()>0) {
+                sum += rooms.get(i).getHeatingenergy();
+            }
+            else{
+                throw new IllegalArgumentException("The arguments must be positive");
+            }
         }
         return sum;
     }
