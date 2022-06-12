@@ -15,6 +15,8 @@ class LevelTest {
     public static void setUp() {
         ArrayList<Room> rooms = new ArrayList<>();
         level = new Level(rooms);
+        level.addRoom(10,20,400,500,200);
+        level.addRoom(200,34,54,26,45);
     }
 
     @Test
@@ -101,6 +103,16 @@ class LevelTest {
         level.setRooms(newRooms);
         assertEquals(2.9915187376725838264299802761341, level.calculateConsumption());
     }
+    @Test
+    public void testAidkits(){
+        assertEquals(2, level.calculateAidkits());
+    }
+
+    @Test
+    public void testExtinguishers(){
+        assertEquals(1, level.calculateExtinguisher());
+    }
+
     @Test
     public void testCalculateAreaException(){
         level.addRoom(-2,154,198, 2,100);

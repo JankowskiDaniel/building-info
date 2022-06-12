@@ -134,7 +134,6 @@ public class Level extends BuildingComponent{
      */
 
     @JsonIgnore
-
     public void addRoom(double area, double volume, double lightingpower, int id,double heat){
         Room room = new Room(area, volume, lightingpower, id,heat);
         this.rooms.add(room);

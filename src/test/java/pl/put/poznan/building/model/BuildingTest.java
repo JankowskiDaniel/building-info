@@ -67,6 +67,21 @@ class BuildingTest {
     public void testCalculateConsumption(){assertEquals(0.7125541125541126,building.calculateConsumption());}
 
     @Test
+    public void testAidkits(){
+        assertEquals(6, building.calculateAidkits());
+    }
+
+    @Test
+    public void testExtinguishers(){
+        assertEquals(2, building.calculateExtinguisher());
+    }
+
+    @Test
+    public void testSumHeatingEnergy(){
+        assertEquals(3292.0, building.sumHeatingenergy());
+    }
+
+    @Test
     public void testCalculateAreaException(){
         assertThrows(IllegalArgumentException.class,  () -> {
             buildingNegative.calculateArea();
