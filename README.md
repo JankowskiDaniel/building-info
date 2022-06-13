@@ -28,6 +28,7 @@ https://jankowskidaniel.github.io/building-info/
     "area": 0.0,
     "volume":0.0,
     "lightingpower":0.0,
+    "heatlimit":0.0,
     "levels": [{
         "id":1,
         "area": 0.0,
@@ -37,16 +38,19 @@ https://jankowskidaniel.github.io/building-info/
             "id":1,
             "area":2.5,
             "volume":5.0,
-            "lightingpower":10.0
+            "lightingpower":10.0,
+            "heatingenergy":10.0
             },
             {"id":2,
             "area":7.5,
             "volume":8.0,
-            "lightingpower":40.0},
+            "lightingpower":40.0,
+            "heatingenergy":10.0},
             {"id":3,
             "area":3,
             "volume":2.0,
-            "lightingpower":30.0}
+            "lightingpower":30.0,
+            "heatingenergy":10.0}
         ]
     }]
 }
