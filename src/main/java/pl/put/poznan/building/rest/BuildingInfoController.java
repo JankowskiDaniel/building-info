@@ -18,6 +18,12 @@ public class BuildingInfoController {
     private static final Logger logger = LoggerFactory.getLogger(LevelInfoController.class);
     private static final ObjectMapper mapper = new ObjectMapper();
 
+    /**
+     * Function which output area of the building to the endpoint
+     * @param building
+     * @return output string
+     * @throws JsonProcessingException
+     */
     @PostMapping("/building/area")
     public String area(@RequestBody Building building) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
@@ -25,6 +31,12 @@ public class BuildingInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    /**
+     * Function which output volume of the building to the endpoint
+     * @param building
+     * @return
+     * @throws JsonProcessingException
+     */
     @PostMapping("/building/volume")
     public String volume(@RequestBody Building building) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
@@ -32,6 +44,12 @@ public class BuildingInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    /**
+     * Function, which output lightpower of the building to the endpoint
+     * @param building
+     * @return
+     * @throws JsonProcessingException
+     */
     @PostMapping("/building/lightPower")
     public String lightPower(@RequestBody Building building) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
@@ -39,6 +57,12 @@ public class BuildingInfoController {
         return mapper.writeValueAsString(node);
     }
 
+    /**
+     * Function which output heat consumption to the endpoint
+     * @param building
+     * @return
+     * @throws JsonProcessingException
+     */
     @PostMapping("/building/heatconsumption")
     public String heatconsumption(@RequestBody Building building) throws JsonProcessingException {
         ObjectNode node = mapper.createObjectNode();
