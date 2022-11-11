@@ -45,7 +45,7 @@ class BuildingTest {
 
     @Test
     public void testCalculateArea(){
-        assertEquals(2121, building.calculateArea());
+        assertEquals(2122, building.calculateArea());
     }
 
     @Test
